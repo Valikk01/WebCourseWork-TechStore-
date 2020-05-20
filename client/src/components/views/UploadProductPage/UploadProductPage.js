@@ -6,14 +6,14 @@ import Axios from 'axios';
 const { Title } = Typography;
 const { TextArea } = Input;
 
-const Products= [
-    { key: 1, value: "PCs" },
+const Products = [
+    { key: 1, value: "Laptops" },
     { key: 2, value: "Phones" },
-    { key: 3, value: "Laptops" },
-    { key: 4, value: "PC Parts" },
-    { key: 5, value: "Tablets" },
-    { key: 6, value: "Keyboards" },
-    { key: 7, value: "Monitors" }
+    { key: 3, value: "Tablets" },
+    { key: 4, value: "Tools" },
+    { key: 5, value: "PCs" },
+    { key: 6, value: "Consoles" },
+    { key: 7, value: "Keyboards" }
 ]
 
 function UploadProductPage(props) {
@@ -21,7 +21,7 @@ function UploadProductPage(props) {
     const [TitleValue, setTitleValue] = useState("")
     const [DescriptionValue, setDescriptionValue] = useState("")
     const [PriceValue, setPriceValue] = useState(0)
-    const [ProductValue, setProductValue] = useState(1)
+    const [ContinentValue, setContinentValue] = useState(1)
 
     const [Images, setImages] = useState([])
 
@@ -39,7 +39,7 @@ function UploadProductPage(props) {
     }
 
     const onProductsSelectChange = (event) => {
-        setProductValue(event.currentTarget.value)
+        setContinentValue(event.currentTarget.value)
     }
 
     const updateImages = (newImages) => {
@@ -50,8 +50,8 @@ function UploadProductPage(props) {
 
 
         if (!TitleValue || !DescriptionValue || !PriceValue ||
-            !ProductValue || !Images) {
-            return alert('Fill all the fields first!')
+            !ContinentValue || !Images) {
+            return alert('fill all the fields first!')
         }
 
         const variables = {
@@ -60,7 +60,7 @@ function UploadProductPage(props) {
             description: DescriptionValue,
             price: PriceValue,
             images: Images,
-            products: ProductValue,
+            continents: ContinentValue,
         }
 
         Axios.post('/api/product/uploadProduct', variables)
@@ -110,7 +110,7 @@ function UploadProductPage(props) {
                     type="number"
                 />
                 <br /><br />
-                <select onChange={onProductsSelectChange} value={2}>
+                <select onChange={onProductsSelectChange} value={ContinentValue}>
                     {Products.map(item => (
                         <option key={item.key} value={item.key}>{item.value} </option>
                     ))}

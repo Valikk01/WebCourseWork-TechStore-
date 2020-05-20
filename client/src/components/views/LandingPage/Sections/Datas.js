@@ -34,10 +34,10 @@ const price = [
 
 
 
-const products = [
+const continents = [
     {
         "_id": 1,
-        "name": "PCs"
+        "name": "Laptops"
     },
     {
         "_id": 2,
@@ -45,28 +45,28 @@ const products = [
     },
     {
         "_id": 3,
-        "name": "Laptops"
-    },
-    {
-        "_id": 4,
-        "name": "PC parts"
-    },
-    {
-        "_id": 5,
         "name": "Tablets"
     },
     {
+        "_id": 4,
+        "name": "Tools"
+    },
+    {
+        "_id": 5,
+        "name": "PCs"
+    },
+    {
         "_id": 6,
-        "name": "Keyboards"
+        "name": "Consoles"
     },
     {
         "_id": 7,
-        "name": "Monitors"
+        "name": "Keyboards"
     }
 ]
 
 
 export {
     price,
-    products
+    continents
 }

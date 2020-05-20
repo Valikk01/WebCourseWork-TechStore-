@@ -70,6 +70,8 @@
   .menu_left,
   .menu_rigth {
     display: none;
+    background-color: black !important;
+    color:white;
   }
 
   .menu__logo a {
@@ -79,6 +81,7 @@
   .menu__container .ant-menu-item,
   .menu__container .ant-menu-submenu-title {
     padding: 1px 20px;
+    background-color: black;
   }
 
   .menu__logo a {
